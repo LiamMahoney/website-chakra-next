@@ -1,15 +1,23 @@
-import { Flex, Heading } from "@chakra-ui/react";
+import { 
+    Flex,
+    Heading,
+    useColorModeValue
+} from "@chakra-ui/react";
 import Link from "next/Link";
 import NavbarLink from "./navbar_link";
+import ColorModeSwitcher from "./color_mode_switcher"
 
 export default function Navbar() {
+
+    const backgroundColor = useColorModeValue("white", "gray.800");
+
     return (
         <Flex
             width="100%"
-            height={10}
+            height={12}
             position="sticky"
             top={0}
-            backgroundColor="inherit"
+            backgroundColor={backgroundColor}
         >
             <Flex
                 alignItems="center"
@@ -34,7 +42,15 @@ export default function Navbar() {
                 <NavbarLink href="/projects" text="Projects" />
                 <NavbarLink href="/posts" text="Posts" />
             </Flex>
-            <Flex flex={1} />
+            <Flex 
+                flex={1}
+                alignItems="center"
+                justifyContent="flex-end"
+            >
+                <ColorModeSwitcher 
+                    marginRight={2}
+                />
+            </Flex>
         </Flex>
     )
 } 
