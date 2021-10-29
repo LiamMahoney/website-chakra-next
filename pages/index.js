@@ -1,4 +1,8 @@
-import { Heading, Flex } from "@chakra-ui/react"
+import { 
+    Flex,
+    Image,
+    Text 
+} from "@chakra-ui/react"
 import Page from "../components/page";
 
 export default function Home() {
@@ -10,9 +14,32 @@ export default function Home() {
                 justifyContent="center"
                 alignItems="center"
             >
-                <Heading>
-                    Home
-                </Heading>
+                <Flex
+                    maxWidth="900px"
+                >
+                    <Image 
+                        src="/home.png" 
+                        alt="Liam, his girlfriend and their dog"
+                        width="450px"
+                        borderRadius="xl"
+                        padding="15px"
+                    />
+                    <Flex
+                        flexDirection="column"
+                        padding="15px"
+                        justifyContent="center"
+                    >
+                        <Text marginBottom={6}>
+                            Hi, I'm Liam.
+                        </Text>
+                        <Text marginBottom={6}>
+                            I'm somewhere between an Information Security Engineer and Software Developer. I work alongside an Incident Response team building integrations between their SOAR platform and other security tools. 
+                        </Text>
+                        <Text marginBottom={6}>
+                            When I'm not on a computer I'm most likely playing with my dog or (trying to) grill on my Big Green Egg.
+                        </Text>
+                    </Flex>
+                </Flex>
             </Flex>
         </Page>
     )
