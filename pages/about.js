@@ -1,7 +1,7 @@
 import { Heading, Flex } from "@chakra-ui/react"
 import Page from "../components/page";
 
-export default function Home() {
+export default function About() {
     return (
         <Page>
             <Flex
@@ -11,7 +11,7 @@ export default function Home() {
                 alignItems="center"
             >
                 <Heading>
-                    Home
+                    About
                 </Heading>
             </Flex>
         </Page>
