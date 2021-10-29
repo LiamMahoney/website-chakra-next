@@ -33,7 +33,7 @@ export default function Home() {
                             Hi, I&apos;m Liam.
                         </Text>
                         <Text marginBottom={6}>
-                            I&apos;m somewhere between an Information Security Engineer and Software Developer. I work alongside an Incident Response team building integrations between their SOAR platform and other security tools. 
+                            I&apos;m somewhere between an Information Security Engineer and Web Developer. I work alongside a Cybersecurity Incident Response Team building integrations between their SOAR platform and other security tools.
                         </Text>
                         <Text marginBottom={6}>
                             When I&apos;m not on a computer I&apos;m most likely playing with my dog or (trying to) grill on my Big Green Egg.
