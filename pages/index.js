@@ -30,13 +30,13 @@ export default function Home() {
                         justifyContent="center"
                     >
                         <Text marginBottom={6}>
-                            Hi, I'm Liam.
+                            Hi, I&apos;m Liam.
                         </Text>
                         <Text marginBottom={6}>
-                            I'm somewhere between an Information Security Engineer and Software Developer. I work alongside an Incident Response team building integrations between their SOAR platform and other security tools. 
+                            I&apos;m somewhere between an Information Security Engineer and Software Developer. I work alongside an Incident Response team building integrations between their SOAR platform and other security tools. 
                         </Text>
                         <Text marginBottom={6}>
-                            When I'm not on a computer I'm most likely playing with my dog or (trying to) grill on my Big Green Egg.
+                            When I&apos;m not on a computer I&apos;m most likely playing with my dog or (trying to) grill on my Big Green Egg.
                         </Text>
                     </Flex>
                 </Flex>
