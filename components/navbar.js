@@ -7,6 +7,9 @@ export default function Navbar() {
         <Flex
             width="100%"
             height={10}
+            position="sticky"
+            top={0}
+            backgroundColor="inherit"
         >
             <Flex
                 alignItems="center"
