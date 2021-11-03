@@ -80,6 +80,7 @@ export default function About() {
                         </IconHeader>
                         <Flex
                             flexDirection="column"
+                            paddingLeft={4}
                         >
                             <Link
                                 href="https://github.com/LiamMahoney"
