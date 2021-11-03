@@ -58,6 +58,7 @@ export default function About() {
                         </IconHeader>
                         <Flex
                             flexDirection="column"
+                            marginLeft={{md: 4}}
                         >
                             <Flex alignItems="center" justifyContent="space-between">
                                 <Heading size="md" marginBottom={2}>

@@ -7,7 +7,7 @@ import {
 export default function JobPosition({title, description}) {
 
     return (
-        <Flex flexDirection="column" marginTop={3} paddingLeft={4}>
+        <Flex flexDirection="column" marginTop={3} paddingLeft={{md: 4}}>
             <Heading size="sm">
                 {title}
             </Heading>
