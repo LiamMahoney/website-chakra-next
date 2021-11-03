@@ -30,6 +30,7 @@ export default function About() {
             >
                 <Flex
                     width="800px"
+                    maxWidth="90%"
                     flexDirection="column"
                     paddingTop={8}
                 >
