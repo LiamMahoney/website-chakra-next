@@ -12,7 +12,7 @@ export default function NavbarLink({ href, text, mobile}) {
             marginRight={4}
             marginTop={linkMargin}
         >
-            <Link href={href}>
+            <Link href={href} passHref>
                 <ChakraLink>
                     {linkText}
                 </ChakraLink>
