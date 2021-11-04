@@ -45,7 +45,7 @@ export default function Navbar() {
                     <Heading
                         size="md"
                         userSelect="none"
-                        position="fixed"
+                        zIndex={1000}
                     >
                         <Link href="/">
                         Liam Mahoney
@@ -78,9 +78,7 @@ export default function Navbar() {
                     alignItems="center"
                     paddingRight={2}
                     display={{base: "flex", md: "none"}}
-                    position="fixed"
-                    right={0}
-                    top={0}
+                    zIndex={1000}
                 >
                     <Hamburger
                         toggled={isOpen}
