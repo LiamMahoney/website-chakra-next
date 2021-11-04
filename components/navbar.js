@@ -25,24 +25,16 @@ export default function Navbar() {
     }, [isOpen]);
 
     const backgroundColor = useColorModeValue("white", "gray.800");
-    // either whole screen or just navbar height
-    const mobileHeight = isOpen ? "100vh" : 12
-    // want sticky when the mobile navbar is not extended so it can be used to
-    // calculate the rest of the available screen size
-    const positionValue = isOpen ? "fixed" : "sticky"
 
     return (
-        <Flex
-            height={mobileHeight}
-            flexDirection="column"
-            position={positionValue}
-            zIndex={100}
-            top={0}
-            width="100%"
-            backgroundColor={backgroundColor}
-        >
+        <>
             <Flex
                 height={12}
+                position="sticky"
+                zIndex={1}
+                top={0}
+                width="100%"
+                backgroundColor={backgroundColor}
             >
                 <Flex
                     alignItems="center"
@@ -53,6 +45,7 @@ export default function Navbar() {
                     <Heading
                         size="md"
                         userSelect="none"
+                        position="fixed"
                     >
                         <Link href="/">
                         Liam Mahoney
@@ -85,6 +78,9 @@ export default function Navbar() {
                     alignItems="center"
                     paddingRight={2}
                     display={{base: "flex", md: "none"}}
+                    position="fixed"
+                    right={0}
+                    top={0}
                 >
                     <Hamburger
                         toggled={isOpen}
@@ -93,32 +89,44 @@ export default function Navbar() {
                     />
                 </Flex>
             </Flex>
-            <Collapse in={isOpen} endingHeight="100%">
-                <Flex
-                    height="100%"
-                    flexDirection="column"
+            <Flex
+                position="fixed"
+            >
+                <Collapse 
+                    in={isOpen} 
+                    endingHeight="100vh"
+                    sx={{position: 'fixed'}}
                 >
                     <Flex
-                        flexGrow={1}
-                        alignItems="center"
-                        justifyContent="center"
+                        height="100%"
                         flexDirection="column"
+                        position="fixed"
+                        top={0}
+                        width="100vw"
+                        backgroundColor={backgroundColor}
                     >
-                        <NavbarLink href="/about" text="About" mobile={true}/>
-                        <NavbarLink href="/projects" text="Projects" mobile={true}/>
-                        <NavbarLink href="/posts" text="Posts" mobile={true}/>
+                        <Flex
+                            flexGrow={1}
+                            alignItems="center"
+                            justifyContent="center"
+                            flexDirection="column"
+                        >
+                            <NavbarLink href="/about" text="About" mobile={true}/>
+                            <NavbarLink href="/projects" text="Projects" mobile={true}/>
+                            <NavbarLink href="/posts" text="Posts" mobile={true}/>
+                        </Flex>
+                        <Flex
+                            justifyContent="flex-end"
+                            flexGrow={0}
+                        >
+                            <ColorModeSwitcher 
+                                marginRight={2}
+                                marginBottom={2}
+                            />
+                        </Flex>
                     </Flex>
-                    <Flex
-                        justifyContent="flex-end"
-                        flexGrow={0}
-                    >
-                        <ColorModeSwitcher 
-                            marginRight={2}
-                            marginBottom={2}
-                        />
-                    </Flex>
-                </Flex>
-            </Collapse>
-        </Flex>
+                </Collapse>
+            </Flex>
+        </>
     )
 } 
