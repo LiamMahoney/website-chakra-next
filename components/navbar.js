@@ -8,7 +8,7 @@ import {
 import {
     Squash as Hamburger
 } from 'hamburger-react';
-import Link from "next/Link";
+import Link from "next/link";
 import NavbarLink from "./navbar_link";
 import ColorModeSwitcher from "./color_mode_switcher"
 

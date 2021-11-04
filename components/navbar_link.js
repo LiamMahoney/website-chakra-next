@@ -1,5 +1,5 @@
 import { Link as ChakraLink, Box, Heading } from "@chakra-ui/react";
-import Link from "next/Link";
+import Link from "next/link";
 
 export default function NavbarLink({ href, text, mobile}) {
     
