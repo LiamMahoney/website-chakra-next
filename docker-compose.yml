@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  website:
+    build: .
+    container_name: website
+    networks:
+      - web
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.website.tls=true
+      - traefik.http.routers.website.tls.certresolver=lets-encrypt
+      - traefik.http.routers.website.rule=Host(`liammahoney.io`)
+
+networks:
+  web:
+    external: true
