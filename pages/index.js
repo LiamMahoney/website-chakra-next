@@ -15,7 +15,9 @@ export default function Home() {
                 alignItems="center"
             >
                 <Flex
-                    maxWidth="900px"
+                    maxWidth={{base: "90%", md: "900px"}}
+                    flexDirection={{base: "column", md: "row"}}
+                    alignItems="center"
                 >
                     <Image 
                         src="/home.png" 
