@@ -22,13 +22,14 @@ export default function Home() {
                     <Image 
                         src="/home.png" 
                         alt="Liam, his girlfriend and their dog"
-                        width="450px"
-                        borderRadius="xl"
-                        padding="15px"
+                        width={{base: "100%", md: "450px"}}
+                        height="auto"
+                        padding={{base: 0, md: "15px"}}
+                        paddingBottom={{base: 6, md: 0}}
                     />
                     <Flex
                         flexDirection="column"
-                        padding="15px"
+                        padding={{base: 0, md: "15px"}}
                         justifyContent="center"
                     >
                         <Text marginBottom={6}>
