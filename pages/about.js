@@ -58,8 +58,8 @@ export default function About() {
                             flexDirection="column"
                             marginLeft={{md: 4}}
                         >
-                            <Flex alignItems="center" justifyContent="space-between">
-                                <Heading size="md" marginBottom={2}>
+                            <Flex alignItems="center" justifyContent="space-between" marginBottom={2}>
+                                <Heading size="md">
                                     Univeristy of Wisconsin-Madison
                                 </Heading>
                                 <Heading size="sm">
@@ -69,7 +69,7 @@ export default function About() {
                             <Text marginLeft={4}>
                                 Bachelors of Business Administration (BBA), Information Systems
                             </Text>
-                            <Text marginLeft={4}>
+                            <Text marginLeft={4} marginTop={1}>
                                 Certificate in Computer Science
                             </Text>
                         </Flex>
