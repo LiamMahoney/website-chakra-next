@@ -2,10 +2,8 @@ import {
     Heading, 
     Flex, 
     Text, 
-    ListItem, 
-    UnorderedList, 
     Link,
-    Icon
+    Box
 } from "@chakra-ui/react"
 import {
     BsBoxArrowUpRight,
@@ -84,18 +82,22 @@ export default function About() {
                             flexDirection="column"
                             paddingLeft={4}
                         >
-                            <Link
-                                href="https://github.com/LiamMahoney"
-                                isExternal={true}
-                            >
-                                Github
-                            </Link>
-                            <Link 
-                                href="https://www.linkedin.com/in/liamrmahoney/"
-                                isExternal={true}
-                            >
-                                LinkedIn
-                            </Link>
+                            <Box>
+                                <Link
+                                    href="https://github.com/LiamMahoney"
+                                    isExternal={true}
+                                >
+                                    Github
+                                </Link>
+                            </Box>
+                            <Box>
+                                <Link 
+                                    href="https://www.linkedin.com/in/liamrmahoney/"
+                                    isExternal={true}
+                                >
+                                    LinkedIn
+                                </Link>
+                            </Box>
                         </Flex>
                     </AboutSection>
                 </Flex>
