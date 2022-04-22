@@ -1,5 +1,6 @@
 import { 
     Flex,
+    Heading,
     Image,
     Text 
 } from "@chakra-ui/react"
@@ -32,14 +33,14 @@ export default function Home() {
                         padding={{base: 0, md: "15px"}}
                         justifyContent="center"
                     >
-                        <Text marginBottom={6}>
+                        <Heading size={'lg'} marginBottom={10}>
                             Hi, I&apos;m Liam.
+                        </Heading>
+                        <Text marginBottom={6}>
+                            I&apos;m somewhere between an Information Security Engineer and Web Developer. I work alongside a Cybersecurity Incident Response Team building integrations between our SOAR platform and other security tools.
                         </Text>
                         <Text marginBottom={6}>
-                            I&apos;m somewhere between an Information Security Engineer and Web Developer. I work alongside a Cybersecurity Incident Response Team building integrations between their SOAR platform and other security tools.
-                        </Text>
-                        <Text marginBottom={6}>
-                            When I&apos;m not on a computer I&apos;m most likely playing with my dog or (trying to) grill on my Big Green Egg.
+                            When I&apos;m not on a computer I&apos;m most likely playing with my dog or trying to grill on my Big Green Egg.
                         </Text>
                     </Flex>
                 </Flex>

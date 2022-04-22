@@ -7,7 +7,7 @@ export default function AboutSection(props) {
     return (
         <Flex
             flexDirection="column"
-            marginBottom={10}
+            marginBottom={20}
         >
             {props.children}
         </Flex>
