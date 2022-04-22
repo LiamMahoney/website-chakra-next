@@ -4,6 +4,7 @@ services:
   website:
     build: .
     container_name: website
+    restart: unless-stopped
     networks:
       - web
     labels:
