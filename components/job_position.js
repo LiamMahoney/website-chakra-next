@@ -1,17 +1,17 @@
 import {
     Flex,
     Heading,
-    Text
+    Text,
 } from "@chakra-ui/react";
 
 export default function JobPosition({title, description}) {
 
     return (
-        <Flex flexDirection="column" marginTop={3} paddingLeft={{md: 4}}>
+        <Flex flexDirection="column" marginTop={3} >
             <Heading size="sm">
                 {title}
             </Heading>
-            <Text marginLeft={4}>
+            <Text marginLeft={8} marginTop={2}>
                 {description}
             </Text>
         </Flex>
