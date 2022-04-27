@@ -41,7 +41,7 @@ export default function Project({ project }) {
                         <Icon 
                             as={AiOutlineGithub}
                             _hover={{color: iconColor}}
-                            boxSize={8}
+                            boxSize={6}
                         />
                     </Link>
                 </Flex>
