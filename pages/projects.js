@@ -1,4 +1,8 @@
-import { Flex } from "@chakra-ui/react"
+import { 
+    Flex, 
+    Alert,
+    AlertIcon
+} from "@chakra-ui/react"
 import Page from "../components/page";
 import Project from "../components/project";
 import getProjects from "../lib/get_projects";
@@ -15,6 +19,7 @@ export default function Projects({projects}) {
                 flexDir="column"
             >
                 {
+                    projects ? 
                     projects.map((project) => {
                         return (
                             <Project 
@@ -22,7 +27,16 @@ export default function Projects({projects}) {
                                 key={project.id}
                             />
                         )
-                    })
+                    }) :
+                    <Alert
+                        status="error"
+                        maxWidth="80%"
+                        width="400px"
+                        marginTop={8}
+                    >
+                        <AlertIcon />
+                        Experienced an error
+                    </Alert>
                 }
             </Flex>
         </Page>
