@@ -27,14 +27,14 @@ export default function About() {
                 flexDirection="column"
             >
                 <Flex
-                    width="800px"
+                    width="650px"
                     maxWidth="90%"
                     flexDirection="column"
                     paddingTop={8}
                 >
                     <AboutSection>
                         <Heading
-                            size="2xl"
+                            size="lg"
                             marginBottom={6}
                         >
                             Work Experience
@@ -59,7 +59,7 @@ export default function About() {
                     </AboutSection>
                     <AboutSection>
                         <Heading
-                            size="2xl"
+                            size="lg"
                             marginBottom={6}
                         >
                             Education
@@ -68,7 +68,7 @@ export default function About() {
                             flexDirection="column"
                         >
                             <Flex alignItems="center" justifyContent="space-between" marginBottom={2}>
-                                <Heading size="lg">
+                                <Heading size="md">
                                     Univeristy of Wisconsin-Madison
                                 </Heading>
                                 <Heading size="sm">
@@ -81,34 +81,6 @@ export default function About() {
                             <Text marginLeft={8} marginTop={1}>
                                 Certificate in Computer Science
                             </Text>
-                        </Flex>
-                    </AboutSection>
-                    <AboutSection>
-                        <Heading
-                            size="2xl"
-                            marginBottom={6}
-                        >
-                            More Information
-                        </Heading>
-                        <Flex
-                            flexDirection="column"
-                        >
-                            <Box>
-                                <Link
-                                    href="https://github.com/LiamMahoney"
-                                    isExternal={true}
-                                >
-                                    Github
-                                </Link>
-                            </Box>
-                            <Box>
-                                <Link 
-                                    href="https://www.linkedin.com/in/liamrmahoney/"
-                                    isExternal={true}
-                                >
-                                    LinkedIn
-                                </Link>
-                            </Box>
                         </Flex>
                     </AboutSection>
                 </Flex>

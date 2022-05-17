@@ -1,5 +1,5 @@
 import { Flex, Heading, Icon, IconButton, Link, Text, Tag, useColorModeValue } from "@chakra-ui/react";
-import { AiOutlineGithub } from "react-icons/ai";
+import { BsCode } from "react-icons/bs";
 
 export default function Project({ project }) {
     
@@ -7,7 +7,7 @@ export default function Project({ project }) {
 
     return (
         <Flex
-            width="800px"
+            width="650px"
             maxWidth="90%"
             flexDirection="column"
             margin={8}
@@ -25,7 +25,7 @@ export default function Project({ project }) {
                     _active="unset"
                     _focus="unset"
                 >
-                    <Heading size="2xl">
+                    <Heading size="lg">
                         {project.attributes.Title}
                     </Heading>
                 </Link>
@@ -39,7 +39,7 @@ export default function Project({ project }) {
                         _focus="unset"
                     >
                         <Icon 
-                            as={AiOutlineGithub}
+                            as={BsCode}
                             _hover={{color: iconColor}}
                             boxSize={6}
                         />
