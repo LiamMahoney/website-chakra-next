@@ -12,18 +12,19 @@ export default function Footer() {
             paddingBottom={4}
             paddingRight={2}
             justifyContent="flex-end"
+            alignItems="center"
         >
             <Link
                 href="https://www.linkedin.com/in/liamrmahoney"
                 isExternal={true}
                 _active="unset"
                 _focus="unset"
+                marginRight={4}
             >
                 <Icon 
                     as={AiOutlineLinkedin}
                     _hover={{color: iconColor}}
                     boxSize={6}
-                    marginRight={4}
                 />
             </Link>
             <Link
@@ -31,12 +32,12 @@ export default function Footer() {
                 isExternal={true}
                 _active="unset"
                 _focus="unset"
+                marginRight={2}
             >
                 <Icon 
                     as={AiOutlineGithub}
                     _hover={{color: iconColor}}
                     boxSize={6}
-                    marginRight={2}
                 />
             </Link>
         </Flex>
