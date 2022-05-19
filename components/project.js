@@ -7,7 +7,7 @@ export default function Project({ project }) {
 
     return (
         <Flex
-            width="650px"
+            width="600px"
             maxWidth="90%"
             flexDirection="column"
             margin={8}
@@ -31,6 +31,8 @@ export default function Project({ project }) {
                 </Link>
                 <Flex
                     alignItems="center"
+                    justifyContent="flex-end"
+                    flexGrow={1}
                 >
                     <Link
                         href={project.attributes.repository_url}
@@ -47,24 +49,23 @@ export default function Project({ project }) {
                 </Flex>
             </Flex>
             <Flex
-                marginTop={4}
-                justifyContent="space-between"
+                marginTop={2}
+                justifyContent="flex-start"
             >
-                <Flex>
-                    {project.attributes.project_tags.data.map((tag) => {
-                        return (
-                            <Tag 
-                                key={tag.id}
-                                marginRight={4}
-                            >
-                                {tag.attributes.technology}
-                            </Tag>
-                        )
-                    })}
-                </Flex> 
+                {project.attributes.project_tags.data.map((tag) => {
+                    return (
+                        <Tag 
+                            key={tag.id}
+                            marginRight={4}
+                            size="sm"
+                        >
+                            {tag.attributes.technology}
+                        </Tag>
+                    )
+                })}
             </Flex>
             <Text
-                marginTop={4}
+                marginTop={2}
             >
                 {project.attributes.description}
             </Text>
