@@ -5,6 +5,8 @@ services:
     build: .
     container_name: website
     restart: unless-stopped
+    env_file:
+      - .env
     networks:
       - web
     labels:
