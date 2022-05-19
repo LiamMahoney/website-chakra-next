@@ -5,7 +5,7 @@ import {
 } from "@chakra-ui/react"
 import Page from "../components/page";
 import Project from "../components/project";
-import getProjects from "../lib/get_projects";
+import { getProjects } from "../lib/projects";
 
 export default function Projects({projects}) {
 

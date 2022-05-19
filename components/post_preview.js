@@ -1,10 +1,7 @@
-import { Flex, Heading, Icon, IconButton, Link, Text, Tag, useColorModeValue } from "@chakra-ui/react";
-import { BsCode } from "react-icons/bs";
+import { Flex, Heading, Link, Text, Tag } from "@chakra-ui/react";
 
-export default function Project({ project }) {
+export default function PostPreview({ post }) {
     
-    const iconColor = useColorModeValue('gray.600', 'gray.300');
-
     return (
         <Flex
             width="600px"
@@ -16,8 +13,7 @@ export default function Project({ project }) {
                 justifyContent="space-between"
             >
                 <Link 
-                    href="https://beersheets.liammahoney.io"
-                    isExternal={true}
+                    href={`/posts/${post.attributes.slug}`}
                     _hover={{
                         textDecoration: "underline",
                         textDecorationThickness: "2px"
@@ -26,40 +22,29 @@ export default function Project({ project }) {
                     _focus="unset"
                 >
                     <Heading size="lg">
-                        {project.attributes.Title}
+                        {post.attributes.title}
                     </Heading>
                 </Link>
                 <Flex
                     alignItems="center"
-                    justifyContent="flex-end"
-                    flexGrow={1}
                 >
-                    <Link
-                        href={project.attributes.repository_url}
-                        isExternal={true}
-                        _active="unset"
-                        _focus="unset"
-                    >
-                        <Icon 
-                            as={BsCode}
-                            _hover={{color: iconColor}}
-                            boxSize={6}
-                        />
-                    </Link>
+                    <Text fontSize={{'base': 'xs', 'md': 'sm'}}>
+                        {post.attributes.publish_date}
+                    </Text>
                 </Flex>
             </Flex>
             <Flex
-                marginTop={2}
+                marginTop={1}
                 justifyContent="flex-start"
             >
-                {project.attributes.project_tags.data.map((tag) => {
+                {post.attributes.post_tags.data.map((tag) => {
                     return (
                         <Tag 
                             key={tag.id}
                             marginRight={4}
                             size="sm"
                         >
-                            {tag.attributes.technology}
+                            {tag.attributes.name}
                         </Tag>
                     )
                 })}
@@ -67,7 +52,7 @@ export default function Project({ project }) {
             <Text
                 marginTop={2}
             >
-                {project.attributes.description}
+                {post.attributes.description}
             </Text>
         </Flex>
     )
