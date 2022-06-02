@@ -16,8 +16,8 @@ export default function Page(props) {
                 >
                     {props.children}
                 </Flex>
+                <Footer />
             </Flex>
-            <Footer />
         </>
     )
 }
