@@ -7,6 +7,7 @@ export default function MyApp({ Component, pageProps }) {
         <ChakraProvider theme={theme}>
             <Head>
                 <link rel="shortcut icon" href="/favicon.svg" />
+                <title>Liam Mahoney&#39;s Website</title>
             </Head>
             <Component {...pageProps} />
         </ChakraProvider>
