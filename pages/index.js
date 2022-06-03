@@ -5,8 +5,11 @@ import {
     Text 
 } from "@chakra-ui/react"
 import Page from "../components/page";
+const fs = require('fs')
 
-export default function Home() {
+export default function Home({ imageCount }) {
+    const imageName = `/home/${Math.floor(Math.random() * imageCount) + 1}.png`;
+
     return (
         <Page>
             <Flex
@@ -21,8 +24,8 @@ export default function Home() {
                     alignItems="center"
                 >
                     <Image 
-                        src="/home.png" 
-                        alt="Liam, his girlfriend and their dog"
+                        src={imageName} 
+                        alt="a random picture of Liam"
                         width={{base: "100%", md: "450px"}}
                         height="auto"
                         padding={{base: 0, md: "15px"}}
@@ -47,4 +50,14 @@ export default function Home() {
             </Flex>
         </Page>
     )
+}
+
+export async function getStaticProps() {
+    const imageCount = fs.readdirSync(`${process.cwd()}/public/home`).length
+
+    return {
+        props: {
+            imageCount: imageCount
+        }
+    }
 }
