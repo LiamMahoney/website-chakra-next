@@ -24,7 +24,7 @@ export default function Navbar() {
         }
     }, [isOpen]);
 
-    const backgroundColor = useColorModeValue("white", "gray.800");
+    const backgroundColor = useColorModeValue("bg.light", "bg.dark");
 
     return (
         <>
