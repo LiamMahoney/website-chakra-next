@@ -2,15 +2,11 @@ import { extendTheme } from "@chakra-ui/react";
 import textTheme from "./text";
 import { mode } from '@chakra-ui/theme-tools';
 
-const overrides = {
-    
-}
-
 const theme = extendTheme({
     styles: {
         global: (props) => ({
             body: {
-                bg: mode('#F4FFF8', '#1C1C1C')(props)
+                bg: mode('#FFFDF5', '#1C1C1C')(props)
             }
         })
     },
@@ -19,8 +15,13 @@ const theme = extendTheme({
     },
     colors: {
         bg: {
-            light: '#F4FFF8',
+            light: '#FFFDF5',
             dark: '#1C1C1C'
+        }, 
+        // not ideal but couldn't get Tag styling to work similarly to the Text component
+        tagBg: {
+            light: '#E6E4DC',
+            dark: '#363636'
         }
     }
 });

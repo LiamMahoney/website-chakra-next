@@ -4,6 +4,7 @@ import { BsCode } from "react-icons/bs";
 export default function Project({ project }) {
     
     const iconColor = useColorModeValue('gray.600', 'gray.300');
+    const tagColor = useColorModeValue('tagBg.light', 'tagBg.dark');
 
     return (
         <Flex
@@ -58,6 +59,7 @@ export default function Project({ project }) {
                             key={tag.id}
                             marginRight={4}
                             size="sm"
+                            sx={{backgroundColor: tagColor}}
                         >
                             {tag.attributes.technology}
                         </Tag>
