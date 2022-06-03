@@ -10,13 +10,16 @@ import {
     UnorderedList,
     ListItem,
     OrderedList,
-    Tag
+    Tag,
+    useColorModeValue
 } from "@chakra-ui/react"
 import Page from "../../components/page";
 import { getPostBySlug, getPosts } from "../../lib/posts";
 import ReactMarkdown from "react-markdown";
 
 export default function Post({post}) {
+
+    const tagColor = useColorModeValue('tagBg.light', 'tagBg.dark');
 
     //TODO: create blockquote component
     const componentMap = {
@@ -84,6 +87,7 @@ export default function Post({post}) {
                                     key={tag.id}
                                     marginRight={4}
                                     size="sm"
+                                    sx={{backgroundColor: tagColor}}
                                 >
                                     {tag.attributes.name}
                                 </Tag>

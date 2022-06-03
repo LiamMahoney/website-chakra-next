@@ -1,7 +1,8 @@
-import { Flex, Heading, Link, Text, Tag } from "@chakra-ui/react";
+import { Flex, Heading, Link, Text, Tag, useColorModeValue } from "@chakra-ui/react";
 
 export default function PostPreview({ post }) {
-    
+    const tagColor = useColorModeValue('tagBg.light', 'tagBg.dark');
+
     return (
         <Flex
             width="600px"
@@ -43,6 +44,7 @@ export default function PostPreview({ post }) {
                             key={tag.id}
                             marginRight={4}
                             size="sm"
+                            sx={{backgroundColor: tagColor}}
                         >
                             {tag.attributes.name}
                         </Tag>
