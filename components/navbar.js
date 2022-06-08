@@ -31,7 +31,7 @@ export default function Navbar() {
             <Flex
                 height={12}
                 position="sticky"
-                zIndex={1}
+                zIndex="sticky"
                 top={0}
                 width="100%"
                 backgroundColor={backgroundColor}
@@ -89,6 +89,7 @@ export default function Navbar() {
             </Flex>
             <Flex
                 position="fixed"
+                zIndex="dropdown"
             >
                 <Collapse 
                     in={isOpen} 

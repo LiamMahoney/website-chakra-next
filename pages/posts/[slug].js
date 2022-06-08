@@ -59,7 +59,7 @@ export default function Post({post}) {
                 >
                     <Flex
                         marginTop={6}
-                        marginBottom={1}
+                        marginBottom={4}
                         justifyContent="space-between"
                         width="100%"
                         alignItems="center"
@@ -70,31 +70,36 @@ export default function Post({post}) {
                         >
                             {post.attributes.title}
                         </Heading>
-                        <Text
-                            fontSize="sm"
+                        <Flex
+                            flexDir="column"
+                            flexShrink={0}
+                            alignItems={{base: 'center', md: 'flex-end'}}
                         >
-                            {post.attributes.publish_date}
-                        </Text>
+                            <Text
+                                fontSize="sm"
+                            >
+                                {post.attributes.publish_date}
+                            </Text>
+                            <Flex
+                                flexDir={{base: "row", md: "column"}}
+                                alignItems="flex-end"
+                            >
+                                {post.attributes.post_tags.data.map((tag) => {
+                                    return (
+                                        <Tag 
+                                            key={tag.id}
+                                            marginTop={{base: 2, md: 1}}
+                                            marginLeft={{base: 1, md: 0}}
+                                            size="sm"
+                                            sx={{backgroundColor: tagColor}}
+                                        >
+                                            {tag.attributes.name}
+                                        </Tag>
+                                    )
+                                })}
+                            </Flex>
+                        </Flex>
                     </Flex>
-                    <Flex 
-                        justifyContent={{'base': 'center', 'md': 'flex-start'}} 
-                        marginBottom={6}
-                        width="100%"
-                    >
-                        {post.attributes.post_tags.data.map((tag) => {
-                            return (
-                                <Tag 
-                                    key={tag.id}
-                                    marginRight={4}
-                                    size="sm"
-                                    sx={{backgroundColor: tagColor}}
-                                >
-                                    {tag.attributes.name}
-                                </Tag>
-                            )
-                        })}
-                    </Flex>
-     
                     <ReactMarkdown 
                         components={componentMap}
                     >
