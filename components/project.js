@@ -1,4 +1,4 @@
-import { Flex, Heading, Icon, IconButton, Link, Text, Tag, useColorModeValue } from "@chakra-ui/react";
+import { Flex, Heading, Icon, Link, Text, Tag, useColorModeValue } from "@chakra-ui/react";
 import { BsCode } from "react-icons/bs";
 
 export default function Project({ project }) {
