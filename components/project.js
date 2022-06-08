@@ -26,7 +26,7 @@ export default function Project({ project }) {
                     _active="unset"
                     _focus="unset"
                 >
-                    <Heading size="lg">
+                    <Heading size="md">
                         {project.attributes.Title}
                     </Heading>
                 </Link>
@@ -50,7 +50,7 @@ export default function Project({ project }) {
                 </Flex>
             </Flex>
             <Flex
-                marginTop={2}
+                marginTop={0}
                 justifyContent="flex-start"
             >
                 {project.attributes.project_tags.data.map((tag) => {
@@ -67,7 +67,7 @@ export default function Project({ project }) {
                 })}
             </Flex>
             <Text
-                marginTop={2}
+                marginTop={1}
             >
                 {project.attributes.description}
             </Text>

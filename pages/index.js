@@ -33,7 +33,7 @@ export default function Home() {
                         padding={{base: 0, md: "15px"}}
                         justifyContent="center"
                     >
-                        <Heading size={'lg'} marginBottom={10}>
+                        <Heading size={'md'} marginBottom={10}>
                             Hi, I&apos;m Liam.
                         </Heading>
                         <Text marginBottom={6}>
