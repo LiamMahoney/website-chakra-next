@@ -44,7 +44,6 @@ export default function TagFilter({ tags, selectedFilterTags, handleTitleFilterC
                     _hover={{cursor: "pointer"}}
                 />
             </Flex>
-            {/* TODO: make wrapping work propelry on smaller screens */}
             <Flex
                 display={displayTagFilter ? 'flex' : 'none'}
                 position="absolute"
@@ -70,6 +69,7 @@ export default function TagFilter({ tags, selectedFilterTags, handleTitleFilterC
                 </Heading>
                 <Flex
                     marginTop={2}
+                    flexWrap="wrap"
                 >
                     {
                         tags.map((tag) => {
