@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import { Alert, AlertIcon, Flex } from "@chakra-ui/react";
-
 import Page from "../components/page";
 import PostPreview from "../components/posts/post_preview";
-import TagFilter from "../components/posts/tag_filter";
+import PostFilter from "../components/posts/post_filter";
 import { getPosts } from "../lib/posts";
 
 export default function Posts({ posts, tags }) {
@@ -11,10 +10,6 @@ export default function Posts({ posts, tags }) {
     const [ displayTagFilter, setDisplayTagFilter ] = useState(false);
     const [ selectedFilterTags, setSelectedFilterTags ] = useState([]);
     const [ titleFilter, setTitleFilter ] = useState('');
-
-    const toggleTagFilterDisplay = () => {
-        setDisplayTagFilter(!displayTagFilter);
-    }
 
     const handleTagClick = (e) => {
         if (selectedFilterTags.indexOf(e.target.innerHTML) > -1) {
@@ -39,7 +34,7 @@ export default function Posts({ posts, tags }) {
         } else {
             // one of the filters has a value - filter posts
 
-            // IDs of posts that are already goign to be displayed, helps speed
+            // IDs of posts that are already going to be displayed, helps speed
             // up filtering and prevents duplicate components rendering for the
             // same post
             let postIDsToDisplay = [];
@@ -103,12 +98,12 @@ export default function Posts({ posts, tags }) {
                 flexDir="column"
                 alignItems="center"
             >
-                <TagFilter 
+                <PostFilter 
                     tags={tags}
                     selectedFilterTags={selectedFilterTags}
                     handleTitleFilterChange={handleTitleFilterChange}
                     displayTagFilter={displayTagFilter}
-                    toggleTagFilterDisplay={toggleTagFilterDisplay}
+                    setDisplayTagFilter={setDisplayTagFilter}
                     handleTagClick={handleTagClick}
                 />
                 <Flex
