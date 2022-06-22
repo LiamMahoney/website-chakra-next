@@ -3,7 +3,7 @@ import DropDown from "../drop_down";
 
 export default function TagFilter({ displayTagFilter, selectedFilterTags, handleTagClick, setDisplayTagFilter, tags}) {
     
-    const popOverBackgroundColor = useColorModeValue('bg.light', '#212121');
+    const tagColor = useColorModeValue('tagBg.light', 'tagBg.dark');    
 
     return (
         <DropDown
@@ -19,7 +19,6 @@ export default function TagFilter({ displayTagFilter, selectedFilterTags, handle
                 tags.map((tag) => {
                     return selectedFilterTags.indexOf(tag) > -1 ? 
                     (<Tag
-                        colorScheme="green"
                         key={tag}
                         onClick={handleTagClick}
                         marginTop={2}
@@ -27,11 +26,12 @@ export default function TagFilter({ displayTagFilter, selectedFilterTags, handle
                         marginLeft={2}
                         _hover={{cursor: "pointer"}}
                         size="sm"
+                        backgroundColor={tagColor}
+                        variant="outline"
                     >
                         { tag }
                     </Tag>) :
                     (<Tag
-                        colorScheme="red"
                         key={tag}
                         onClick={handleTagClick}
                         marginTop={2}
@@ -39,6 +39,7 @@ export default function TagFilter({ displayTagFilter, selectedFilterTags, handle
                         marginRight={2}
                         _hover={{cursor: "pointer"}}
                         size="sm"
+                        backgroundColor={tagColor}
                     >
                         { tag }
                     </Tag>)
