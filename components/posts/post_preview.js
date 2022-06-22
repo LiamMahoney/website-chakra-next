@@ -3,6 +3,8 @@ import { Flex, Heading, Link, Text, Tag, useColorModeValue } from "@chakra-ui/re
 export default function PostPreview({ post }) {
     const tagColor = useColorModeValue('tagBg.light', 'tagBg.dark');
 
+    const publishedStr = new Date(post.attributes.publishedAt).toLocaleDateString({year: "2-digit"});
+
     return (
         <Flex
             width="100%"
@@ -42,9 +44,10 @@ export default function PostPreview({ post }) {
                 >
                     <Flex
                         alignItems="center"
+                        justifyContent="flex-end"
                     >
                         <Text fontSize={{'base': 'xs', 'md': 'sm'}}>
-                            {post.attributes.publish_date}
+                            {publishedStr}
                         </Text>
                     </Flex>
                     <Flex

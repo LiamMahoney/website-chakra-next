@@ -21,6 +21,8 @@ export default function Post({post}) {
 
     const tagColor = useColorModeValue('tagBg.light', 'tagBg.dark');
 
+    const publishedStr = new Date(post.attributes.publishedAt).toLocaleDateString();
+
     //TODO: create blockquote component
     const componentMap = {
         a: Link,
@@ -78,7 +80,7 @@ export default function Post({post}) {
                             <Text
                                 fontSize="sm"
                             >
-                                {post.attributes.publish_date}
+                                {publishedStr}
                             </Text>
                             <Flex
                                 flexDir={{base: "row", md: "column"}}
