@@ -14,61 +14,56 @@ export default function PostPreview({ post }) {
         > 
             <Flex
                 justifyContent="space-between"
+                flexDirection={{'base': 'column', 'md': 'row'}}
+                // flexWrap={{'base': 'wrap', 'md': 'nowrap'}}
+                alignItems={{'base': 'flex-start', 'md': 'flex-end'}}
             >
-                <Flex
-                    flexDir="column"
+                <Link 
+                    href={`/posts/${post.attributes.slug}`}
+                    _hover={{
+                        textDecoration: "underline",
+                        textDecorationThickness: "2px"
+                    }}
+                    _active="unset"
+                    _focus="unset"
                 >
-                    <Link 
-                        href={`/posts/${post.attributes.slug}`}
-                        _hover={{
-                            textDecoration: "underline",
-                            textDecorationThickness: "2px"
-                        }}
-                        _active="unset"
-                        _focus="unset"
-                    >
-                        <Heading size="md">
-                            {post.attributes.title}
-                        </Heading>
-                    </Link>
-                    <Text
-                        marginTop={2}
-                    >
-                        {post.attributes.description}
-                    </Text>
-                </Flex>
-                <Flex
-                    flexDir="column"
-                    flexShrink={0}
-                    marginLeft={1}
+                    <Heading size="md">
+                        {post.attributes.title}
+                    </Heading>
+                </Link>
+                <Text fontSize={{'base': 'xs', 'md': 'sm'}}>
+                    {publishedStr}
+                </Text>
+            </Flex>
+            <Flex
+                flexWrap={{'base': 'wrap-reverse', 'md': 'nowrap'}}
+                justifyContent={{'md': "space-between"}}
+            >
+                <Text
+                    marginTop={2}
+                    width={{'base': '100%', 'md': 'auto'}}
                 >
-                    <Flex
-                        alignItems="center"
-                        justifyContent="flex-end"
-                    >
-                        <Text fontSize={{'base': 'xs', 'md': 'sm'}}>
-                            {publishedStr}
-                        </Text>
-                    </Flex>
-                    <Flex
-                        marginTop={1}
-                        justifyContent="flex-start"
-                        alignItems="flex-end"
-                        flexDir="column"
-                    >
-                        {post.attributes.post_tags.data.map((tag) => {
-                            return (
-                                <Tag 
-                                    key={tag.id}
-                                    marginTop={1}
-                                    size="sm"
-                                    sx={{backgroundColor: tagColor}}
-                                >
-                                    {tag.attributes.name}
-                                </Tag>
-                            )
-                        })}
-                    </Flex>
+                    {post.attributes.description}
+                </Text>
+                <Flex
+                    marginTop={{'base': 1, 'md': 0}}
+                    flexDir={{'base': 'row', 'md': 'column'}}
+                    flexShrink={{'md': 0}}
+                    alignItems={{'base': 'flex-start', 'md': 'flex-end'}}
+                >
+                    {post.attributes.post_tags.data.map((tag) => {
+                        return (
+                            <Tag 
+                                key={tag.id}
+                                marginTop={{'base': 0, 'md': 1}}
+                                marginRight={{'base': 1, 'md': 0}}
+                                size="sm"
+                                sx={{backgroundColor: tagColor}}
+                            >
+                                {tag.attributes.name}
+                            </Tag>
+                        )
+                    })}
                 </Flex>
             </Flex>
         </Flex>
