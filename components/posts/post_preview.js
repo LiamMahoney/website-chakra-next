@@ -15,7 +15,6 @@ export default function PostPreview({ post }) {
             <Flex
                 justifyContent="space-between"
                 flexDirection={{'base': 'column', 'md': 'row'}}
-                // flexWrap={{'base': 'wrap', 'md': 'nowrap'}}
                 alignItems={{'base': 'flex-start', 'md': 'flex-end'}}
             >
                 <Link 
@@ -40,7 +39,7 @@ export default function PostPreview({ post }) {
                 justifyContent={{'md': "space-between"}}
             >
                 <Text
-                    marginTop={2}
+                    marginTop={{'base': 1, 'md': 2}}
                     width={{'base': '100%', 'md': 'auto'}}
                 >
                     {post.attributes.description}
