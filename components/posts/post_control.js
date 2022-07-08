@@ -97,7 +97,7 @@ export default function PostControl({ tags, posts, postsDisplayed, setPostsDispl
 
     return (
         <Box
-            width="650px"
+            width="600px"
             maxWidth="90%"
             position="relative"
         >

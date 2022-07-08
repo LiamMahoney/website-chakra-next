@@ -24,7 +24,7 @@ export default function Posts({ posts, tags }) {
                     postsDisplayed={postsDisplayed}
                 />
                 <Flex
-                    width="650px"
+                    width="600px"
                     maxWidth="90%"
                     flexDir="column"
                     alignItems="center"
