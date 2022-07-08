@@ -17,6 +17,7 @@ export default function Projects({projects}) {
                 justifyContent="flex-start"
                 alignItems="center"
                 flexDir="column"
+                marginTop={4}
             >
                 {
                     projects ? 

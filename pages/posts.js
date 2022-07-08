@@ -1,13 +1,14 @@
+import { useState, useEffect } from "react";
 import { Alert, AlertIcon, Flex } from "@chakra-ui/react";
 import Page from "../components/page";
-import PostPreview from "../components/post_preview";
+import PostPreview from "../components/posts/post_preview";
+import PostControl from "../components/posts/post_control";
 import { getPosts } from "../lib/posts";
 
+export default function Posts({ posts, tags }) {
 
-export default function Posts({ posts }) {
-
-    console.log('posts ', posts);
-
+    const [ postsDisplayed, setPostsDisplayed ] = useState(posts);
+    
     return (
         <Page>
             <Flex
@@ -16,15 +17,21 @@ export default function Posts({ posts }) {
                 flexDir="column"
                 alignItems="center"
             >
+                <PostControl 
+                    tags={tags}
+                    posts={posts}
+                    setPostsDisplayed={setPostsDisplayed}
+                    postsDisplayed={postsDisplayed}
+                />
                 <Flex
-                    width="650px"
+                    width="600px"
                     maxWidth="90%"
                     flexDir="column"
                     alignItems="center"
                 >
                     {
-                        posts ? 
-                        posts.map((post) => {
+                        postsDisplayed ? 
+                        postsDisplayed.map((post) => {
                             return (
                                 <PostPreview
                                     post={post} 
@@ -60,10 +67,20 @@ export default function Posts({ posts }) {
 export async function getStaticProps() {
     const posts = await getPosts();
 
-    console.log('posts in getStatusProps ', posts);
+    // unique tags from posts
+    const tags = posts.reduce((acc, curr) => {
+        curr.attributes.post_tags.data.forEach(element => {
+            if (acc.indexOf(element.attributes.name) === -1) {
+                acc.push(element.attributes.name);
+            }
+        });
+        return acc;
+    }, []);
+
     return {
         props: {
-            posts
+            posts,
+            tags
         }
     }
 }

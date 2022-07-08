@@ -1,20 +1,13 @@
 import { 
     Heading, 
     Flex, 
-    Text, 
-    Link,
-    Box
+    Text
 } from "@chakra-ui/react"
-import {
-    BsBoxArrowUpRight,
-    BsBriefcase,
-    BsBook
-} from "react-icons/bs";
-import IconHeader from "../components/icon_header";
-import AboutSection from "../components/about_section";
+
+import AboutSection from "../components/about/about_section";
 import Page from "../components/page";
-import Job from "../components/job";
-import JobPosition from "../components/job_position";
+import Job from "../components/about/job";
+import JobPosition from "../components/about/job_position";
 
 export default function About() {
     return (

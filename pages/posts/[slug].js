@@ -21,6 +21,8 @@ export default function Post({post}) {
 
     const tagColor = useColorModeValue('tagBg.light', 'tagBg.dark');
 
+    const publishedStr = new Date(post.attributes.publishedAt).toLocaleDateString();
+
     //TODO: create blockquote component
     const componentMap = {
         a: Link,
@@ -59,42 +61,46 @@ export default function Post({post}) {
                 >
                     <Flex
                         marginTop={6}
-                        marginBottom={1}
-                        justifyContent="space-between"
+                        marginBottom={4}
+                        alignItems="flex-start"
                         width="100%"
-                        alignItems="center"
-                        flexDir={{'base': 'column', 'md': 'row'}}
+                        flexDir="column"
                     >
                         <Heading
                             size="xl"
                         >
                             {post.attributes.title}
                         </Heading>
-                        <Text
-                            fontSize="sm"
+                        <Flex
+                            flexDir="column"
+                            flexShrink={0}
+                            alignItems="flex-start"
+                            width="100%"
                         >
-                            {post.attributes.publish_date}
-                        </Text>
+                            <Text
+                                fontSize="sm"
+                            >
+                                {publishedStr}
+                            </Text>
+                            <Flex
+                                alignItems="flex-start"
+                            >
+                                {post.attributes.post_tags.data.map((tag) => {
+                                    return (
+                                        <Tag 
+                                            key={tag.id}
+                                            marginTop={{base: 1, md: 2}}
+                                            marginRight={{base: 1, md: 2}}
+                                            size="sm"
+                                            sx={{backgroundColor: tagColor}}
+                                        >
+                                            {tag.attributes.name}
+                                        </Tag>
+                                    )
+                                })}
+                            </Flex>
+                        </Flex>
                     </Flex>
-                    <Flex 
-                        justifyContent={{'base': 'center', 'md': 'flex-start'}} 
-                        marginBottom={6}
-                        width="100%"
-                    >
-                        {post.attributes.post_tags.data.map((tag) => {
-                            return (
-                                <Tag 
-                                    key={tag.id}
-                                    marginRight={4}
-                                    size="sm"
-                                    sx={{backgroundColor: tagColor}}
-                                >
-                                    {tag.attributes.name}
-                                </Tag>
-                            )
-                        })}
-                    </Flex>
-     
                     <ReactMarkdown 
                         components={componentMap}
                     >

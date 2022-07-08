@@ -13,7 +13,7 @@ export default function NavbarLink({ href, text, mobile}) {
             marginTop={linkMargin}
         >
             <Link href={href} passHref>
-                <ChakraLink>
+                <ChakraLink _focus={{boxShadow: 'unset'}}>
                     {linkText}
                 </ChakraLink>
             </Link>
