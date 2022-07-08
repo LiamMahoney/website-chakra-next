@@ -61,25 +61,6 @@ export default function Project({ project }) {
                 >
                     {project.attributes.description}
                 </Text>
-                <Flex
-                    marginTop={{'base': 1, 'md': 0}}
-                    flexDir={{'base': 'row', 'md': 'column'}}
-                    flexShrink={{'md': 0}}
-                    alignItems={{'base': 'flex-start', 'md': 'flex-end'}}
-                >
-                    {project.attributes.project_tags.data.map((tag) => {
-                        return (
-                            <Tag 
-                                key={tag.id}
-                                marginTop={{'base': 0, 'md': 1}}
-                                marginRight={{'base': 1, 'md': 0}}                                size="sm"
-                                sx={{backgroundColor: tagColor}}
-                            >
-                                {tag.attributes.technology}
-                            </Tag>
-                        )
-                    })}
-                </Flex>
             </Flex>
         </Flex>
     )

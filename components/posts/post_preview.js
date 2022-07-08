@@ -44,26 +44,6 @@ export default function PostPreview({ post }) {
                 >
                     {post.attributes.description}
                 </Text>
-                <Flex
-                    marginTop={{'base': 1, 'md': 0}}
-                    flexDir={{'base': 'row', 'md': 'column'}}
-                    flexShrink={{'md': 0}}
-                    alignItems={{'base': 'flex-start', 'md': 'flex-end'}}
-                >
-                    {post.attributes.post_tags.data.map((tag) => {
-                        return (
-                            <Tag 
-                                key={tag.id}
-                                marginTop={{'base': 0, 'md': 1}}
-                                marginRight={{'base': 1, 'md': 0}}
-                                size="sm"
-                                sx={{backgroundColor: tagColor}}
-                            >
-                                {tag.attributes.name}
-                            </Tag>
-                        )
-                    })}
-                </Flex>
             </Flex>
         </Flex>
     )
