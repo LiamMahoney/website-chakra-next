@@ -62,10 +62,9 @@ export default function Post({post}) {
                     <Flex
                         marginTop={6}
                         marginBottom={4}
-                        justifyContent="space-between"
+                        alignItems="flex-start"
                         width="100%"
-                        alignItems="center"
-                        flexDir={{'base': 'column', 'md': 'row'}}
+                        flexDir="column"
                     >
                         <Heading
                             size="xl"
@@ -75,7 +74,8 @@ export default function Post({post}) {
                         <Flex
                             flexDir="column"
                             flexShrink={0}
-                            alignItems={{base: 'center', md: 'flex-end'}}
+                            alignItems="flex-start"
+                            width="100%"
                         >
                             <Text
                                 fontSize="sm"
@@ -83,15 +83,14 @@ export default function Post({post}) {
                                 {publishedStr}
                             </Text>
                             <Flex
-                                flexDir={{base: "row", md: "column"}}
-                                alignItems="flex-end"
+                                alignItems="flex-start"
                             >
                                 {post.attributes.post_tags.data.map((tag) => {
                                     return (
                                         <Tag 
                                             key={tag.id}
-                                            marginTop={{base: 2, md: 1}}
-                                            marginLeft={{base: 1, md: 0}}
+                                            marginTop={{base: 1, md: 2}}
+                                            marginRight={{base: 1, md: 2}}
                                             size="sm"
                                             sx={{backgroundColor: tagColor}}
                                         >
