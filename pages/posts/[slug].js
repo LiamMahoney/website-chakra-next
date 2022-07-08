@@ -1,5 +1,4 @@
 import { 
-    Box,
     Flex,
     Heading,
     Link,
@@ -12,7 +11,8 @@ import {
     OrderedList,
     Tag,
     useColorModeValue
-} from "@chakra-ui/react"
+} from "@chakra-ui/react";
+import { ViewIcon } from "@chakra-ui/icons";
 import Page from "../../components/page";
 import { getPostBySlug, getPosts } from "../../lib/posts";
 import ReactMarkdown from "react-markdown";
@@ -82,6 +82,15 @@ export default function Post({post}) {
                             >
                                 {publishedStr}
                             </Text>
+                            <Flex alignItems="center">
+                                <ViewIcon />
+                                <Text 
+                                    fontSize="sm"
+                                    marginLeft={1}
+                                >
+                                    {post.attributes.views}
+                                </Text>
+                            </Flex>
                             <Flex
                                 alignItems="flex-start"
                             >

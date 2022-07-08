@@ -1,7 +1,7 @@
-import { Flex, Heading, Link, Text, Tag, useColorModeValue } from "@chakra-ui/react";
+import { Flex, Heading, Link, Text } from "@chakra-ui/react";
+import { ViewIcon } from "@chakra-ui/icons";
 
 export default function PostPreview({ post }) {
-    const tagColor = useColorModeValue('tagBg.light', 'tagBg.dark');
 
     const publishedStr = new Date(post.attributes.publishedAt).toLocaleDateString({year: "2-digit"});
 
@@ -30,16 +30,33 @@ export default function PostPreview({ post }) {
                         {post.attributes.title}
                     </Heading>
                 </Link>
+           
+            </Flex>
+            <Flex
+                justifyContent="space-between"
+            >
                 <Text fontSize={{'base': 'xs', 'md': 'sm'}}>
                     {publishedStr}
                 </Text>
+                <Flex
+                    alignItems="center"
+                    marginLeft={2}
+                >
+                    <ViewIcon boxSize={{'base': '.8em', 'md': '1em'}}/>
+                    <Text 
+                        fontSize={{'base': 'xs', 'md': 'sm'}}
+                        marginLeft={1}    
+                    >
+                        {post.attributes.views}
+                    </Text>
+                </Flex>
             </Flex>
             <Flex
                 flexWrap={{'base': 'wrap-reverse', 'md': 'nowrap'}}
                 justifyContent={{'md': "space-between"}}
             >
                 <Text
-                    marginTop={{'base': 1, 'md': 2}}
+                    marginTop={{'base': 1, 'md': 1}}
                     width={{'base': '100%', 'md': 'auto'}}
                 >
                     {post.attributes.description}
